@@ -43,7 +43,7 @@ if [ $STATUS -eq 0 ] && [ -z "$DRYRUN" ]; then
         SDCARD_DIR="$SCRIPT_DIR/../_SDCARD_/hekate"
         PKG="$SCRIPT_DIR/.release-pkg"
         rm -rf "$PKG" "$SDCARD_DIR"
-        mkdir -p "$PKG/bootloader/sys" "$PKG/bootloader/ini" "$PKG/bootloader/res" "$PKG/bootloader/payloads"
+        mkdir -p "$PKG/bootloader/sys" "$PKG/bootloader/ini" "$PKG/bootloader/res" "$PKG/bootloader/payloads" "$SDCARD_DIR"
         cp "$BIN" "$PKG/hekate.bin"
         cp output/nyx.bin output/libsys_lp0.bso output/libsys_minerva.bso "$PKG/bootloader/sys/"
         cp res/hekate_ipl_template.ini "$PKG/bootloader/hekate_ipl.ini"
