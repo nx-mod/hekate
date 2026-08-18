@@ -46,8 +46,9 @@ if [ $STATUS -eq 0 ] && [ -z "$DRYRUN" ]; then
         mkdir -p "$PKG/bootloader/sys" "$PKG/bootloader/ini" "$PKG/bootloader/res" "$PKG/bootloader/payloads" "$SDCARD_DIR"
         cp "$BIN" "$PKG/hekate.bin"
         cp output/nyx.bin output/libsys_lp0.bso output/libsys_minerva.bso "$PKG/bootloader/sys/"
-        cp res/hekate_ipl_template.ini "$PKG/bootloader/hekate_ipl.ini"
+        cp res/hekate_ipl_switch-cfw.ini "$PKG/bootloader/hekate_ipl.ini"
         cp res/patches_template.ini "$PKG/bootloader/patches.ini"
+        cp -r res/nyx_icons "$PKG/bootloader/res/nyx_icons"
         mkdir -p "$ZIPS_DIR"
         ( cd "$PKG" && zip -r -X "$ZIPS_DIR/hekate-release.zip" ./* >/dev/null )
         cp -r "$PKG"/* "$SDCARD_DIR/"
